@@ -140,26 +140,28 @@ export default function Sidebar() {
               className="fixed inset-0 bg-black/40 z-[55] md:hidden"
             />
             <motion.aside
-              initial={{ x: -280 }}
-              animate={{ x: 0 }}
-              exit={{ x: -280 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed left-0 top-0 bottom-0 w-64 bg-white z-[60] md:hidden shadow-2xl"
-            >
-              <div className="flex items-center justify-between px-4 py-5 border-b border-gray-100">
-                <div className="flex flex-col leading-none">
-                  <span className="text-lg tracking-tight text-gray-900">
-                    <span className="font-extrabold">roche</span>
-                    <span className="font-normal">bobois</span>
-                  </span>
-                  <span className="text-[8px] tracking-[0.35em] text-gray-500 uppercase mt-0.5">paris</span>
-                </div>
-                <button onClick={() => setMobileOpen(false)}>
-                  <X size={20} className="text-gray-400" />
-                </button>
-              </div>
-              <SidebarContent />
-            </motion.aside>
+  initial={{ x: -280 }}
+  animate={{ x: 0 }}
+  exit={{ x: -280 }}
+  transition={{ type: "spring", damping: 25, stiffness: 200 }}
+  className="fixed left-0 top-0 bottom-0 w-64 bg-white z-[60] md:hidden shadow-2xl flex flex-col"
+>
+  <div className="flex items-center justify-between px-4 py-5 border-b border-gray-100 flex-shrink-0">
+    <div className="flex flex-col leading-none">
+      <span className="text-lg tracking-tight text-gray-900">
+        <span className="font-extrabold">roche</span>
+        <span className="font-normal">bobois</span>
+      </span>
+      <span className="text-[8px] tracking-[0.35em] text-gray-500 uppercase mt-0.5">paris</span>
+    </div>
+    <button onClick={() => setMobileOpen(false)}>
+      <X size={20} className="text-gray-400" />
+    </button>
+  </div>
+  <div className="flex-1 min-h-0 overflow-y-auto">
+    <SidebarContent />
+  </div>
+</motion.aside>
           </>
         )}
       </AnimatePresence>
