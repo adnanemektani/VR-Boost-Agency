@@ -15,11 +15,11 @@ function Layout({ children }: { children: React.ReactNode }) {
     }}>
       <Header />
       <Sidebar />
-      <main className="ml-64 pt-24 pr-4 pb-4 min-h-screen">
-        <div className="bg-white/40 backdrop-blur-sm rounded-3xl min-h-full p-5">
-          {children}
-        </div>
-      </main>
+      <main className="md:ml-64 pt-20 md:pt-24 px-4 md:pr-4 pb-4 min-h-screen">
+  <div className="bg-white/40 backdrop-blur-sm rounded-3xl min-h-full p-4 md:p-5">
+    {children}
+  </div>
+</main>
     </div>
   );
 }

@@ -64,7 +64,7 @@ export default function VirtualMeeting() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
-                      className="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-4 flex items-center gap-4"
+                      className="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3"
                     >
                       {/* Date */}
                       <div className="flex flex-col items-center justify-center bg-gray-50 rounded-xl w-14 h-14 flex-shrink-0">
@@ -89,7 +89,8 @@ export default function VirtualMeeting() {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 flex-shrink-0">
+                      <div className="flex gap-2 flex-shrink-0 w-full sm:w-auto justify-end">
+
                         <button
                           onClick={() => setCancelModal(true)}
                           className="px-3 py-1.5 rounded-lg border border-gray-200 text-xs font-medium text-gray-500 hover:bg-gray-50 transition"

@@ -59,7 +59,7 @@ export default function StagingEditor() {
       </div>
 
       {/* Top Toolbar */}
-      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 z-10">
         {/* Left: Back */}
         <button
           onClick={() => navigate("/")}
@@ -146,7 +146,7 @@ export default function StagingEditor() {
       </div>
 
       {/* Right Panel: Furniture */}
-      <div className="absolute right-4 top-20 bottom-24 w-52 z-10">
+      <div className="absolute right-2 top-32 bottom-24 w-40 md:w-52 z-10">
         <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-sm p-3 flex flex-col gap-3 h-full overflow-y-auto">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Furniture</p>
           {furniture.map((item) => (

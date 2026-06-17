@@ -7,7 +7,7 @@ export function VirtualVisits() {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
       <h1 className="text-2xl font-semibold text-gray-800 mb-6">Virtual Visits</h1>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {visits.map((visit) => (
           <div
             key={visit.id}
@@ -39,7 +39,7 @@ export function FurnitureCatalog() {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
       <h1 className="text-2xl font-semibold text-gray-800 mb-6">Furniture Catalog <span className="text-gray-400 text-lg font-normal">654 items</span></h1>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {furniture.map((item) => (
           <div key={item.id} className="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-3 cursor-pointer hover:shadow-md transition group">
             <img src={item.image} className="w-full h-32 object-cover rounded-xl mb-3" />
@@ -56,7 +56,7 @@ export function Team() {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
       <h1 className="text-2xl font-semibold text-gray-800 mb-6">Team</h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {teamMembers.map((member) => (
           <div key={member.id} className="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-5 flex items-center gap-4">
             <img src={member.avatar} className="w-12 h-12 rounded-full" />
