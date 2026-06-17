@@ -22,7 +22,7 @@ export default function StagingEditor() {
   const [showHubModal, setShowHubModal] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
   const [hubLoading, setHubLoading] = useState(false);
-  const [hubJoined, setHubJoined] = useState(false);
+  const [, setHubJoined] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const handleHubClick = () => {
