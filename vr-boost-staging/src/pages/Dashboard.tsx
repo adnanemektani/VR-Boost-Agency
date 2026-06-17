@@ -64,7 +64,6 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold text-gray-800 mb-4">My latest Visits</h2>
         <div className="flex flex-col gap-3">
           {visits.map((visit, i) => {
-            const status = statusConfig[visit.status];
             return (
               <motion.div
   key={visit.id}

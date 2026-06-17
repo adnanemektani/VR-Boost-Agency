@@ -59,72 +59,49 @@ export default function StagingEditor() {
       </div>
 
       {/* Top Toolbar */}
-      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 z-10">
-        {/* Left: Back */}
-        <button
-          onClick={() => navigate("/")}
-          className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-xl px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-white transition shadow-sm"
-        >
-          <ArrowLeft size={16} />
-          Back to home
+      // bdel le top toolbar div:
+<div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 z-10">
+  
+  {/* Back */}
+  <button onClick={() => navigate("/")} className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-xl px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white transition shadow-sm">
+    <ArrowLeft size={16} />
+    <span className="hidden sm:inline">Back to home</span>
+  </button>
+
+  {/* Tools — hidden f mobile, visible f sm+ */}
+  <div className="hidden sm:flex items-center gap-1 bg-white/90 backdrop-blur-md rounded-xl px-3 py-2 shadow-sm">
+    {tools.map((tool) => {
+      const Icon = tool.icon;
+      return (
+        <button key={tool.id} onClick={() => setActiveTool(tool.id)}
+          className={`p-2 rounded-lg transition ${activeTool === tool.id ? "bg-gray-900 text-white" : "text-gray-500 hover:bg-gray-100"}`}>
+          <Icon size={16} />
         </button>
+      );
+    })}
+    <div className="w-px h-6 bg-gray-200 mx-1" />
+    {colors.map((color) => (
+      <button key={color} onClick={() => setActiveColor(color)}
+        className={`w-5 h-5 rounded-full border-2 transition ${activeColor === color ? "border-blue-500 scale-110" : "border-transparent"}`}
+        style={{ backgroundColor: color }} />
+    ))}
+    <div className="w-px h-6 bg-gray-200 mx-1" />
+    <button className="p-2 rounded-lg text-red-400 hover:bg-red-50 transition"><Trash2 size={16} /></button>
+  </div>
 
-        {/* Center: Tools */}
-        <div className="flex items-center gap-1 bg-white/90 backdrop-blur-md rounded-xl px-3 py-2 shadow-sm">
-          {tools.map((tool) => {
-            const Icon = tool.icon;
-            return (
-              <button
-                key={tool.id}
-                onClick={() => setActiveTool(tool.id)}
-                className={`p-2 rounded-lg transition ${
-                  activeTool === tool.id
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-500 hover:bg-gray-100"
-                }`}
-                title={tool.label}
-              >
-                <Icon size={16} />
-              </button>
-            );
-          })}
-
-          <div className="w-px h-6 bg-gray-200 mx-1" />
-
-          {/* Colors */}
-          {colors.map((color) => (
-            <button
-              key={color}
-              onClick={() => setActiveColor(color)}
-              className={`w-5 h-5 rounded-full border-2 transition ${
-                activeColor === color ? "border-blue-500 scale-110" : "border-transparent"
-              }`}
-              style={{ backgroundColor: color }}
-            />
-          ))}
-
-          <div className="w-px h-6 bg-gray-200 mx-1" />
-
-          <button className="p-2 rounded-lg text-red-400 hover:bg-red-50 transition" title="Delete">
-            <Trash2 size={16} />
-          </button>
-        </div>
-
-        {/* Right: Share + Play */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowShareModal(true)}
-            className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-xl px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-white transition shadow-sm"
-          >
-            <Share2 size={16} />
-            Partager le projet
-          </button>
-          <button className="flex items-center gap-2 bg-gray-900 rounded-xl px-4 py-2.5 text-sm font-medium text-white hover:bg-gray-700 transition shadow-sm">
-            <Play size={16} />
-            Play
-          </button>
-        </div>
-      </div>
+  {/* Share + Play */}
+  <div className="flex items-center gap-2">
+    <button onClick={() => setShowShareModal(true)}
+      className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-xl px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white transition shadow-sm">
+      <Share2 size={16} />
+      <span className="hidden sm:inline">Partager le projet</span>
+    </button>
+    <button className="flex items-center gap-2 bg-gray-900 rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 transition shadow-sm">
+      <Play size={16} />
+      <span className="hidden sm:inline">Play</span>
+    </button>
+  </div>
+</div>
 
       {/* Room Tabs */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 z-10">
