@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "preview",
+			"path": "vr-boost-staging",
+			"problemMatcher": [],
+			"label": "npm: preview - vr-boost-staging",
+			"detail": "vite preview"
+		}
+	]
+}
