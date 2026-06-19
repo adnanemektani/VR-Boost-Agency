@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import VirtualMeeting from "./pages/VirtualMeeting";
 import StagingEditor from "./pages/StagingEditor";
 import { VirtualVisits, FurnitureCatalog, Team } from "./pages/OtherPages";
+import LandingPage from "./pages/LandingPage";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,7 +29,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout><Dashboard /></Layout>} />
+        <Route path="/" element={<LandingPage />} />
+<Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
         <Route path="/virtual-visits" element={<Layout><VirtualVisits /></Layout>} />
         <Route path="/furniture" element={<Layout><FurnitureCatalog /></Layout>} />
         <Route path="/meetings" element={<Layout><VirtualMeeting /></Layout>} />

@@ -4,7 +4,7 @@ import { LayoutDashboard, Eye, Sofa, Video, Users, MessageCircle, X, Send, Menu 
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard, path: "/" },
+  { label: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
   { label: "Virtual visits", icon: Eye, path: "/virtual-visits" },
   { label: "Furniture Catalog", icon: Sofa, path: "/furniture" },
   { label: "Virtual Meeting", icon: Video, path: "/meetings", badge: 3 },
